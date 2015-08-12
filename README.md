@@ -5,4 +5,4 @@
 iOS端通过获取到的JSON，动态生成二维码以及条形码。
 
 效果显示图
-![image](https://github.com/XueSeason/Generate-QRCode-BarCode-iOS/demo.gif)
+![image](https://github.com/XueSeason/Generate-QRCode-BarCode-iOS/blob/master/demo.gif)
