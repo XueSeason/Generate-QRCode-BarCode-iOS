@@ -4,5 +4,9 @@
 附有基于Node.js的提供JSON数据的简单后台代码代码。
 iOS端通过获取到的JSON，动态生成二维码以及条形码。
 
-效果显示图
+运行环境：Xcode 6.4、iOS 8.4  
+第三方库依赖：AFNetworking、MBProgressHUD  
+
+效果显示图  
+
 ![image](https://github.com/XueSeason/Generate-QRCode-BarCode-iOS/blob/master/demo.gif)
