@@ -21,6 +21,8 @@ NSString * const port     = @"3000";
 
 @property (strong, nonatomic) NSString *code;
 
+@property (assign, nonatomic) CGFloat  currentBrightness;
+
 @property (weak, nonatomic)   IBOutlet UIView         *broadcastView;
 @property (weak, nonatomic)   IBOutlet UIScrollView   *scrollView;
 @property (strong, nonatomic)          UILabel        *adContentLabel;
@@ -122,6 +124,11 @@ NSString * const port     = @"3000";
 
 - (void)tapQRCodeBigger
 {
+    _currentBrightness = [UIScreen mainScreen].brightness;
+    
+    // 调整屏幕亮度
+    [[UIScreen mainScreen] setBrightness:1.0];
+    
     // 隐藏导航栏
     self.navigationController.navigationBarHidden = YES;
 
@@ -146,10 +153,15 @@ NSString * const port     = @"3000";
 {
     self.navigationController.navigationBarHidden = NO;
     [_qrCodeContentView removeFromSuperview];
+    [[UIScreen mainScreen] setBrightness:_currentBrightness];
 }
 
 - (void)tapBarCodeBigger
 {
+    _currentBrightness = [UIScreen mainScreen].brightness;
+    // 调整屏幕亮度
+    [[UIScreen mainScreen] setBrightness:1.0];
+
     // 隐藏导航栏
     self.navigationController.navigationBarHidden = YES;
     
@@ -174,6 +186,7 @@ NSString * const port     = @"3000";
 {
     self.navigationController.navigationBarHidden = NO;
     [_barCodeContentView removeFromSuperview];
+    [[UIScreen mainScreen] setBrightness:_currentBrightness];
 }
 
 #pragma mark - 循环滚动
