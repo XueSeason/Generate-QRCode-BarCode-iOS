@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B1A709771B7890E500272FCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A709761B7890E500272FCD /* main.m */; };
+		B1A7097A1B7890E500272FCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A709791B7890E500272FCD /* AppDelegate.m */; };
+		B1A7097D1B7890E500272FCD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A7097C1B7890E500272FCD /* ViewController.m */; };
+		B1A709801B7890E500272FCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A7097E1B7890E500272FCD /* Main.storyboard */; };
+		B1A709821B7890E500272FCD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1A709811B7890E500272FCD /* Images.xcassets */; };
+		B1A709851B7890E500272FCD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1A709831B7890E500272FCD /* LaunchScreen.xib */; };
+		B1A709911B7890E500272FCD /* VirtualMemberCardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A709901B7890E500272FCD /* VirtualMemberCardTests.m */; };
+		B1A7099E1B78912D00272FCD /* XSVirtualMemberCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A7099C1B78912D00272FCD /* XSVirtualMemberCardViewController.m */; };
+		B1A7099F1B78912D00272FCD /* XSVirtualMemberCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1A7099D1B78912D00272FCD /* XSVirtualMemberCardViewController.xib */; };
+		B1A709D71B78978300272FCD /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A709A31B78978300272FCD /* AFHTTPRequestOperation.m */; };
+		B1A709D81B78978300272FCD /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A709A51B78978300272FCD /* AFHTTPRequestOperationManager.m */; };
+		B1A709D91B78978300272FCD /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A709A71B78978300272FCD /* AFHTTPSessionManager.m */; };
+		B1A709DA1B78978300272FCD /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A709AA1B78978300272FCD /* AFNetworkReachabilityManager.m */; };
+		B1A709DB1B78978300272FCD /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A709AC1B78978300272FCD /* AFSecurityPolicy.m */; };
+		B1A709DC1B78978300272FCD /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A709AE1B78978300272FCD /* AFURLConnectionOperation.m */; };
+		B1A709DD1B78978300272FCD /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A709B01B78978300272FCD /* AFURLRequestSerialization.m */; };
+		B1A709DE1B78978300272FCD /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A709B21B78978300272FCD /* AFURLResponseSerialization.m */; };
+		B1A709DF1B78978300272FCD /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1A709B41B78978300272FCD /* AFURLSessionManager.m */; };
+		B1E35D3A1B79A71600F7BD52 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B1E35D391B79A71600F7BD52 /* MBProgressHUD.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B1A7098B1B7890E500272FCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1A709691B7890E500272FCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B1A709701B7890E500272FCD;
+			remoteInfo = VirtualMemberCard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B1A709711B7890E500272FCD /* VirtualMemberCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualMemberCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1A709751B7890E500272FCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1A709761B7890E500272FCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B1A709781B7890E500272FCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B1A709791B7890E500272FCD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B1A7097B1B7890E500272FCD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B1A7097C1B7890E500272FCD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B1A7097F1B7890E500272FCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B1A709811B7890E500272FCD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B1A709841B7890E500272FCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B1A7098A1B7890E500272FCD /* VirtualMemberCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualMemberCardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1A7098F1B7890E500272FCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1A709901B7890E500272FCD /* VirtualMemberCardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VirtualMemberCardTests.m; sourceTree = "<group>"; };
+		B1A7099B1B78912D00272FCD /* XSVirtualMemberCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSVirtualMemberCardViewController.h; sourceTree = "<group>"; };
+		B1A7099C1B78912D00272FCD /* XSVirtualMemberCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSVirtualMemberCardViewController.m; sourceTree = "<group>"; };
+		B1A7099D1B78912D00272FCD /* XSVirtualMemberCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XSVirtualMemberCardViewController.xib; sourceTree = "<group>"; };
+		B1A709A21B78978300272FCD /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		B1A709A31B78978300272FCD /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		B1A709A41B78978300272FCD /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		B1A709A51B78978300272FCD /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		B1A709A61B78978300272FCD /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		B1A709A71B78978300272FCD /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		B1A709A81B78978300272FCD /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		B1A709A91B78978300272FCD /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		B1A709AA1B78978300272FCD /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		B1A709AB1B78978300272FCD /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		B1A709AC1B78978300272FCD /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		B1A709AD1B78978300272FCD /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		B1A709AE1B78978300272FCD /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		B1A709AF1B78978300272FCD /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		B1A709B01B78978300272FCD /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		B1A709B11B78978300272FCD /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		B1A709B21B78978300272FCD /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		B1A709B31B78978300272FCD /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		B1A709B41B78978300272FCD /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		B1E35D381B79A71600F7BD52 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		B1E35D391B79A71600F7BD52 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B1A7096E1B7890E500272FCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1A709871B7890E500272FCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B1A709681B7890E500272FCD = {
+			isa = PBXGroup;
+			children = (
+				B1A709731B7890E500272FCD /* VirtualMemberCard */,
+				B1A7098D1B7890E500272FCD /* VirtualMemberCardTests */,
+				B1A709721B7890E500272FCD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B1A709721B7890E500272FCD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1A709711B7890E500272FCD /* VirtualMemberCard.app */,
+				B1A7098A1B7890E500272FCD /* VirtualMemberCardTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B1A709731B7890E500272FCD /* VirtualMemberCard */ = {
+			isa = PBXGroup;
+			children = (
+				B1A709A01B78978300272FCD /* Vendor */,
+				B1A7099A1B78910F00272FCD /* VirtualMemberCard */,
+				B1A709781B7890E500272FCD /* AppDelegate.h */,
+				B1A709791B7890E500272FCD /* AppDelegate.m */,
+				B1A7097B1B7890E500272FCD /* ViewController.h */,
+				B1A7097C1B7890E500272FCD /* ViewController.m */,
+				B1A7097E1B7890E500272FCD /* Main.storyboard */,
+				B1A709811B7890E500272FCD /* Images.xcassets */,
+				B1A709831B7890E500272FCD /* LaunchScreen.xib */,
+				B1A709741B7890E500272FCD /* Supporting Files */,
+			);
+			path = VirtualMemberCard;
+			sourceTree = "<group>";
+		};
+		B1A709741B7890E500272FCD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B1A709751B7890E500272FCD /* Info.plist */,
+				B1A709761B7890E500272FCD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B1A7098D1B7890E500272FCD /* VirtualMemberCardTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1A709901B7890E500272FCD /* VirtualMemberCardTests.m */,
+				B1A7098E1B7890E500272FCD /* Supporting Files */,
+			);
+			path = VirtualMemberCardTests;
+			sourceTree = "<group>";
+		};
+		B1A7098E1B7890E500272FCD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B1A7098F1B7890E500272FCD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B1A7099A1B78910F00272FCD /* VirtualMemberCard */ = {
+			isa = PBXGroup;
+			children = (
+				B1A7099B1B78912D00272FCD /* XSVirtualMemberCardViewController.h */,
+				B1A7099C1B78912D00272FCD /* XSVirtualMemberCardViewController.m */,
+				B1A7099D1B78912D00272FCD /* XSVirtualMemberCardViewController.xib */,
+			);
+			path = VirtualMemberCard;
+			sourceTree = "<group>";
+		};
+		B1A709A01B78978300272FCD /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				B1E35D371B79A71600F7BD52 /* MBProgressHUD */,
+				B1A709A11B78978300272FCD /* AFNetworking */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		B1A709A11B78978300272FCD /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				B1A709A21B78978300272FCD /* AFHTTPRequestOperation.h */,
+				B1A709A31B78978300272FCD /* AFHTTPRequestOperation.m */,
+				B1A709A41B78978300272FCD /* AFHTTPRequestOperationManager.h */,
+				B1A709A51B78978300272FCD /* AFHTTPRequestOperationManager.m */,
+				B1A709A61B78978300272FCD /* AFHTTPSessionManager.h */,
+				B1A709A71B78978300272FCD /* AFHTTPSessionManager.m */,
+				B1A709A81B78978300272FCD /* AFNetworking.h */,
+				B1A709A91B78978300272FCD /* AFNetworkReachabilityManager.h */,
+				B1A709AA1B78978300272FCD /* AFNetworkReachabilityManager.m */,
+				B1A709AB1B78978300272FCD /* AFSecurityPolicy.h */,
+				B1A709AC1B78978300272FCD /* AFSecurityPolicy.m */,
+				B1A709AD1B78978300272FCD /* AFURLConnectionOperation.h */,
+				B1A709AE1B78978300272FCD /* AFURLConnectionOperation.m */,
+				B1A709AF1B78978300272FCD /* AFURLRequestSerialization.h */,
+				B1A709B01B78978300272FCD /* AFURLRequestSerialization.m */,
+				B1A709B11B78978300272FCD /* AFURLResponseSerialization.h */,
+				B1A709B21B78978300272FCD /* AFURLResponseSerialization.m */,
+				B1A709B31B78978300272FCD /* AFURLSessionManager.h */,
+				B1A709B41B78978300272FCD /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		B1E35D371B79A71600F7BD52 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				B1E35D381B79A71600F7BD52 /* MBProgressHUD.h */,
+				B1E35D391B79A71600F7BD52 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B1A709701B7890E500272FCD /* VirtualMemberCard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1A709941B7890E500272FCD /* Build configuration list for PBXNativeTarget "VirtualMemberCard" */;
+			buildPhases = (
+				B1A7096D1B7890E500272FCD /* Sources */,
+				B1A7096E1B7890E500272FCD /* Frameworks */,
+				B1A7096F1B7890E500272FCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VirtualMemberCard;
+			productName = VirtualMemberCard;
+			productReference = B1A709711B7890E500272FCD /* VirtualMemberCard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B1A709891B7890E500272FCD /* VirtualMemberCardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1A709971B7890E500272FCD /* Build configuration list for PBXNativeTarget "VirtualMemberCardTests" */;
+			buildPhases = (
+				B1A709861B7890E500272FCD /* Sources */,
+				B1A709871B7890E500272FCD /* Frameworks */,
+				B1A709881B7890E500272FCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1A7098C1B7890E500272FCD /* PBXTargetDependency */,
+			);
+			name = VirtualMemberCardTests;
+			productName = VirtualMemberCardTests;
+			productReference = B1A7098A1B7890E500272FCD /* VirtualMemberCardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B1A709691B7890E500272FCD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "薛纪杰";
+				TargetAttributes = {
+					B1A709701B7890E500272FCD = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					B1A709891B7890E500272FCD = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = B1A709701B7890E500272FCD;
+					};
+				};
+			};
+			buildConfigurationList = B1A7096C1B7890E500272FCD /* Build configuration list for PBXProject "VirtualMemberCard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B1A709681B7890E500272FCD;
+			productRefGroup = B1A709721B7890E500272FCD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B1A709701B7890E500272FCD /* VirtualMemberCard */,
+				B1A709891B7890E500272FCD /* VirtualMemberCardTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B1A7096F1B7890E500272FCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1A709801B7890E500272FCD /* Main.storyboard in Resources */,
+				B1A7099F1B78912D00272FCD /* XSVirtualMemberCardViewController.xib in Resources */,
+				B1A709851B7890E500272FCD /* LaunchScreen.xib in Resources */,
+				B1A709821B7890E500272FCD /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1A709881B7890E500272FCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B1A7096D1B7890E500272FCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1A7097D1B7890E500272FCD /* ViewController.m in Sources */,
+				B1A709DB1B78978300272FCD /* AFSecurityPolicy.m in Sources */,
+				B1A7099E1B78912D00272FCD /* XSVirtualMemberCardViewController.m in Sources */,
+				B1A709D81B78978300272FCD /* AFHTTPRequestOperationManager.m in Sources */,
+				B1A709DC1B78978300272FCD /* AFURLConnectionOperation.m in Sources */,
+				B1A709D71B78978300272FCD /* AFHTTPRequestOperation.m in Sources */,
+				B1E35D3A1B79A71600F7BD52 /* MBProgressHUD.m in Sources */,
+				B1A7097A1B7890E500272FCD /* AppDelegate.m in Sources */,
+				B1A709DD1B78978300272FCD /* AFURLRequestSerialization.m in Sources */,
+				B1A709D91B78978300272FCD /* AFHTTPSessionManager.m in Sources */,
+				B1A709DA1B78978300272FCD /* AFNetworkReachabilityManager.m in Sources */,
+				B1A709DE1B78978300272FCD /* AFURLResponseSerialization.m in Sources */,
+				B1A709DF1B78978300272FCD /* AFURLSessionManager.m in Sources */,
+				B1A709771B7890E500272FCD /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1A709861B7890E500272FCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1A709911B7890E500272FCD /* VirtualMemberCardTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B1A7098C1B7890E500272FCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B1A709701B7890E500272FCD /* VirtualMemberCard */;
+			targetProxy = B1A7098B1B7890E500272FCD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B1A7097E1B7890E500272FCD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B1A7097F1B7890E500272FCD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B1A709831B7890E500272FCD /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B1A709841B7890E500272FCD /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B1A709921B7890E500272FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B1A709931B7890E500272FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B1A709951B7890E500272FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = VirtualMemberCard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B1A709961B7890E500272FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = VirtualMemberCard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		B1A709981B7890E500272FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = VirtualMemberCardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VirtualMemberCard.app/VirtualMemberCard";
+			};
+			name = Debug;
+		};
+		B1A709991B7890E500272FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = VirtualMemberCardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VirtualMemberCard.app/VirtualMemberCard";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B1A7096C1B7890E500272FCD /* Build configuration list for PBXProject "VirtualMemberCard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1A709921B7890E500272FCD /* Debug */,
+				B1A709931B7890E500272FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1A709941B7890E500272FCD /* Build configuration list for PBXNativeTarget "VirtualMemberCard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1A709951B7890E500272FCD /* Debug */,
+				B1A709961B7890E500272FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1A709971B7890E500272FCD /* Build configuration list for PBXNativeTarget "VirtualMemberCardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1A709981B7890E500272FCD /* Debug */,
+				B1A709991B7890E500272FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B1A709691B7890E500272FCD /* Project object */;
+}

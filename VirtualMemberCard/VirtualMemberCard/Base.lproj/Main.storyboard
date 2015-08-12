@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="usk-Fz-7XJ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="k2I-ZH-opp">
+            <objects>
+                <navigationController id="usk-Fz-7XJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q33-Yj-z9d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kZj-sz-b1z" kind="relationship" relationship="rootViewController" id="wCH-rK-VxA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oll-ga-rw9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54" y="584"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="war-Qh-zn4">
+            <objects>
+                <viewController id="kZj-sz-b1z" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Hm-lE-PEQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="NNL-Jb-tsm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="815-hM-Vei">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76Q-Nq-1Y4">
+                                <rect key="frame" x="248" y="285" width="105" height="30"/>
+                                <state key="normal" title="获取虚拟会员卡">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getVirtualMemberCard:" destination="kZj-sz-b1z" eventType="touchUpInside" id="L7K-hZ-StC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="76Q-Nq-1Y4" secondAttribute="centerX" constant="-0.5" id="OGQ-Da-R4y"/>
+                            <constraint firstAttribute="centerY" secondItem="76Q-Nq-1Y4" secondAttribute="centerY" id="Q7p-OS-m7y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RM3-2D-fGs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N32-dr-2re" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="867" y="585"/>
+        </scene>
+    </scenes>
+</document>
