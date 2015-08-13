@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
     };
     sleep(500);
 
-    res.writeHead(200, {'Content-Type': 'text/json'});
+    res.writeHead(200, {'Content-Type': 'application/json'});
     res.end(data);
   });
 });

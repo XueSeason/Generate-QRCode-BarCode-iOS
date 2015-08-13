@@ -95,26 +95,18 @@ NSString * const port     = @"3000";
     _qrCodeImageView.userInteractionEnabled = YES;
     _barCodeContentView = [[UIImageView alloc] init];
     _barCodeImageView.userInteractionEnabled = YES;
-    [_qrCodeImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapQRCodeBigger)]];
-    [_barCodeImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBarCodeBigger)]];
+    
     /**
      *  设置进度条
      */
     _progressView.trackTintColor = [UIColor colorWithRed:214 / 255.0 green:214 / 255.0 blue:214 / 255.0 alpha:1.0];
     _progressView.progressTintColor = kThemeColor;
     
-    // 异步加载
-    [MBProgressHUD showHUDAddedTo:_rectView animated:YES];
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        // 耗时操作
-        [self loadQRCodeAndBarCode];
-
-        // 切换到主线程
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-        });
-    });
+    /**
+     *  加载数据
+     */
+    [self loadQRCodeAndBarCode];
+    
 }
 
 #pragma mark - 点击
@@ -137,9 +129,9 @@ NSString * const port     = @"3000";
     _qrCodeContentView.backgroundColor = [UIColor whiteColor];
 
     // 创建image view
-    _qrCodeSizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, _qrCodeImageView.frame.size.width, _qrCodeImageView.frame.size.height)];
+    _qrCodeSizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, _qrCodeImageView.frame.size.width * 1.2, _qrCodeImageView.frame.size.height * 1.2)];
     _qrCodeSizeImageView.center = CGPointMake(_qrCodeContentView.frame.size.width / 2.0, _qrCodeContentView.frame.size.height / 2.0);
-    _qrCodeSizeImageView.image = [UIImage imageWithCIImage:[_qrCodeImageView.image CIImage] scale:1.0 orientation:UIImageOrientationUp];
+    _qrCodeSizeImageView.image = [UIImage imageWithCIImage:[_qrCodeImageView.image CIImage]];
     [_qrCodeContentView addSubview:_qrCodeSizeImageView];
     
     [self.view addSubview:_qrCodeContentView];
@@ -170,7 +162,7 @@ NSString * const port     = @"3000";
     _barCodeContentView.backgroundColor = [UIColor whiteColor];
     
     // 创建image view
-    _barCodeSizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, _barCodeImageView.frame.size.height, _barCodeImageView.frame.size.width)];
+    _barCodeSizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, _barCodeImageView.frame.size.height * 1.5, _barCodeImageView.frame.size.width * 1.5)];
     _barCodeSizeImageView.center = CGPointMake(_barCodeContentView.frame.size.width / 2.0, _barCodeContentView.frame.size.height / 2.0);
     _barCodeSizeImageView.image = [UIImage imageWithCIImage:[_barCodeImageView.image CIImage] scale:1.0 orientation:UIImageOrientationRight];
     [_barCodeContentView addSubview:_barCodeSizeImageView];
@@ -208,17 +200,32 @@ NSString * const port     = @"3000";
     [MBProgressHUD showHUDAddedTo:_rectView animated:YES];
     [_progressTimer invalidate];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    [self loadQRCodeAndBarCode];
+    [self loadDataFromService];
 }
 
 - (void)loadQRCodeAndBarCode {
+    // 异步加载
+    [MBProgressHUD showHUDAddedTo:_rectView animated:YES];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // 耗时操作
+        [self loadDataFromService];
+        
+        // 切换到主线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+        });
+    });
+}
+
+- (void)loadDataFromService {
     // GET请求
     NSString *URLString = [NSString stringWithFormat:@"%@://%@:%@", protocol, address, port];
     NSDictionary *parameters = @{};
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/json", nil];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", nil];
     
     [manager GET:URLString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
         // 回调函数
@@ -226,13 +233,18 @@ NSString * const port     = @"3000";
         _jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
         if (error) {
             NSLog(@"Parser: %@", error);
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"获取数据异常" message:@"无法解析服务器数据" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alertView show];
+            [MBProgressHUD hideHUDForView:_rectView animated:YES];
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
             return;
         }
         
         if (!([[_jsonDict objectForKey:@"Status"] intValue] == 0)) {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"获取数据异常" message:@"无法从服务器获取正确的数据" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
             [alertView show];
-            
+            [MBProgressHUD hideHUDForView:_rectView animated:YES];
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
             NSLog(@"Status Exception.");
             return;
         }
@@ -252,15 +264,19 @@ NSString * const port     = @"3000";
         _barCodeImageView.image = [self generateBarCode:_code width:_barCodeImageView.frame.size.width height:_barCodeImageView.frame.size.height];
         if (_barCodeContentView.frame.size.width != 0 && _barCodeContentView.frame.size.height != 0) {
             NSLog(@"重新加载条形码");
-            _barCodeSizeImageView.image = [UIImage imageWithCIImage:[_barCodeImageView.image CIImage] scale:1.0 orientation:UIImageOrientationUp];
+            _barCodeSizeImageView.image = [UIImage imageWithCIImage:[_barCodeImageView.image CIImage] scale:1.0 orientation:UIImageOrientationRight];
         }
         
         // 生成二维码
         _qrCodeImageView.image = [self generateQRCode:_code width:_qrCodeImageView.frame.size.width height:_qrCodeImageView.frame.size.height];
         if (_qrCodeContentView.frame.size.width != 0 && _qrCodeContentView.frame.size.height != 0) {
             NSLog(@"重新加载二维码");
-            _qrCodeSizeImageView.image = [UIImage imageWithCIImage:[_qrCodeImageView.image CIImage] scale:1.0 orientation:UIImageOrientationDown];
+            _qrCodeSizeImageView.image = [UIImage imageWithCIImage:[_qrCodeImageView.image CIImage]];
         }
+        
+        // 添加放大事件
+        [_qrCodeImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapQRCodeBigger)]];
+        [_barCodeImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBarCodeBigger)]];
         
         [MBProgressHUD hideHUDForView:_rectView animated:YES];
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];

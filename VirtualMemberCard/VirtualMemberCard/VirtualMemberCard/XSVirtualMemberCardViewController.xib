@@ -67,7 +67,7 @@
                                 <constraint firstAttribute="height" constant="18" id="bNy-0T-mz3"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                             <variation key="default">
                                 <mask key="constraints">
@@ -110,16 +110,16 @@
                         </mask>
                         <mask key="constraints">
                             <exclude reference="fde-QH-Kjf"/>
-                            <exclude reference="4Nw-Wv-9aD"/>
-                            <exclude reference="9gL-ut-peD"/>
-                            <exclude reference="VOo-gE-OBl"/>
-                            <exclude reference="cKm-9f-OcL"/>
-                            <exclude reference="waS-US-TlC"/>
                             <exclude reference="h3i-gY-xUk"/>
                             <exclude reference="6Uc-f2-mkK"/>
                             <exclude reference="UgF-ru-Ali"/>
                             <exclude reference="jgn-BC-U1e"/>
                             <exclude reference="vh8-VS-18h"/>
+                            <exclude reference="4Nw-Wv-9aD"/>
+                            <exclude reference="9gL-ut-peD"/>
+                            <exclude reference="VOo-gE-OBl"/>
+                            <exclude reference="cKm-9f-OcL"/>
+                            <exclude reference="waS-US-TlC"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact">
@@ -130,16 +130,16 @@
                         </mask>
                         <mask key="constraints">
                             <include reference="fde-QH-Kjf"/>
-                            <include reference="4Nw-Wv-9aD"/>
-                            <include reference="9gL-ut-peD"/>
-                            <include reference="VOo-gE-OBl"/>
-                            <include reference="cKm-9f-OcL"/>
-                            <include reference="waS-US-TlC"/>
                             <include reference="h3i-gY-xUk"/>
                             <include reference="6Uc-f2-mkK"/>
                             <include reference="UgF-ru-Ali"/>
                             <exclude reference="jgn-BC-U1e"/>
                             <include reference="vh8-VS-18h"/>
+                            <include reference="4Nw-Wv-9aD"/>
+                            <include reference="9gL-ut-peD"/>
+                            <include reference="VOo-gE-OBl"/>
+                            <include reference="cKm-9f-OcL"/>
+                            <include reference="waS-US-TlC"/>
                         </mask>
                     </variation>
                 </view>
