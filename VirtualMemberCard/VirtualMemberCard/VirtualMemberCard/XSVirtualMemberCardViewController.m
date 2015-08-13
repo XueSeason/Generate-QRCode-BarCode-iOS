@@ -229,7 +229,7 @@ NSString * const port     = @"3000";
             return;
         }
         
-        if (![[_jsonDict objectForKey:@"Status"] intValue] == 0) {
+        if (!([[_jsonDict objectForKey:@"Status"] intValue] == 0)) {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"获取数据异常" message:@"无法从服务器获取正确的数据" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
             [alertView show];
             
