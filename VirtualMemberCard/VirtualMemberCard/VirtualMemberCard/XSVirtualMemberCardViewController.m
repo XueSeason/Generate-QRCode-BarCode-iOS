@@ -167,6 +167,14 @@ NSString * const port     = @"3000";
     _barCodeSizeImageView.image = [UIImage imageWithCIImage:[_barCodeImageView.image CIImage] scale:1.0 orientation:UIImageOrientationRight];
     [_barCodeContentView addSubview:_barCodeSizeImageView];
 
+    // 创建label
+    _barCodeSizeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _barCodeSizeImageView.frame.size.height, 44)];
+    _barCodeSizeLabel.textAlignment = NSTextAlignmentCenter;
+    _barCodeSizeLabel.center = CGPointMake(_barCodeSizeImageView.center.x - 60, _barCodeSizeImageView.center.y);
+    _barCodeSizeLabel.text = [self formatCode:_code];
+    _barCodeSizeLabel.transform = CGAffineTransformMakeRotation(M_PI / 2);
+    [_barCodeContentView addSubview:_barCodeSizeLabel];
+    
     [self.view addSubview:_barCodeContentView];
     [self.view bringSubviewToFront:_barCodeContentView];
     
@@ -265,6 +273,7 @@ NSString * const port     = @"3000";
         if (_barCodeContentView.frame.size.width != 0 && _barCodeContentView.frame.size.height != 0) {
             NSLog(@"重新加载条形码");
             _barCodeSizeImageView.image = [UIImage imageWithCIImage:[_barCodeImageView.image CIImage] scale:1.0 orientation:UIImageOrientationRight];
+            _barCodeSizeLabel.text = [self formatCode:_code];
         }
         
         // 生成二维码
