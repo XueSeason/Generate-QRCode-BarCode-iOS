@@ -14,13 +14,12 @@
 #define kThemeColor [UIColor colorWithRed:223 / 255.0 green:24 / 255.0 blue:37 / 255.0 alpha:1.0];
 
 NSString * const protocol = @"http";
-NSString * const address  = @"193.0.1.231";
+NSString * const address  = @"localhost";
 NSString * const port     = @"3000";
 
 @interface XSVirtualMemberCardViewController ()
 
 @property (strong, nonatomic) NSString *code;
-
 @property (assign, nonatomic) CGFloat  currentBrightness;
 
 @property (weak, nonatomic)   IBOutlet UIView         *broadcastView;
@@ -34,6 +33,7 @@ NSString * const port     = @"3000";
 @property (weak, nonatomic)   IBOutlet UIImageView    *barCodeImageView;
 @property (weak, nonatomic)   IBOutlet UIImageView    *qrCodeImageView;
 @property (weak, nonatomic)   IBOutlet UILabel        *barCodeLabel;
+
 @property (strong, nonatomic)          UIView         *barCodeContentView;
 @property (strong, nonatomic)          UIView         *qrCodeContentView;
 @property (strong, nonatomic)          UIImageView    *barCodeSizeImageView;
@@ -145,6 +145,7 @@ NSString * const port     = @"3000";
 {
     self.navigationController.navigationBarHidden = NO;
     [_qrCodeContentView removeFromSuperview];
+    [_qrCodeSizeImageView removeFromSuperview];
     [[UIScreen mainScreen] setBrightness:_currentBrightness];
 }
 
@@ -186,6 +187,8 @@ NSString * const port     = @"3000";
 {
     self.navigationController.navigationBarHidden = NO;
     [_barCodeContentView removeFromSuperview];
+    [_barCodeSizeLabel removeFromSuperview];
+    [_barCodeSizeImageView removeFromSuperview];
     [[UIScreen mainScreen] setBrightness:_currentBrightness];
 }
 
