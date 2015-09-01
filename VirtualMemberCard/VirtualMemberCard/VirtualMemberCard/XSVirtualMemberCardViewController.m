@@ -14,7 +14,7 @@
 #define kThemeColor [UIColor colorWithRed:223 / 255.0 green:24 / 255.0 blue:37 / 255.0 alpha:1.0];
 
 NSString * const protocol = @"http";
-NSString * const address  = @"127.0.0.1";
+NSString * const address  = @"193.0.1.231";
 NSString * const port     = @"3000";
 
 @interface XSVirtualMemberCardViewController ()
@@ -215,9 +215,10 @@ NSString * const port     = @"3000";
     // 异步加载
     [MBProgressHUD showHUDAddedTo:_rectView animated:YES];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    __weak XSVirtualMemberCardViewController *weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // 耗时操作
-        [self loadDataFromService];
+        [weakSelf loadDataFromService];
         
         // 切换到主线程
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -235,66 +236,67 @@ NSString * const port     = @"3000";
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", nil];
     
+    __weak XSVirtualMemberCardViewController *weakSelf = self;
     [manager GET:URLString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
         // 回调函数
         NSError *error;
-        _jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
+        weakSelf.jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
         if (error) {
             NSLog(@"Parser: %@", error);
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"获取数据异常" message:@"无法解析服务器数据" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
             [alertView show];
-            [MBProgressHUD hideHUDForView:_rectView animated:YES];
+            [MBProgressHUD hideHUDForView:weakSelf.rectView animated:YES];
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
             return;
         }
         
-        if (!([[_jsonDict objectForKey:@"Status"] intValue] == 0)) {
+        if (!([[weakSelf.jsonDict objectForKey:@"Status"] intValue] == 0)) {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"获取数据异常" message:@"无法从服务器获取正确的数据" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
             [alertView show];
-            [MBProgressHUD hideHUDForView:_rectView animated:YES];
+            [MBProgressHUD hideHUDForView:weakSelf.rectView animated:YES];
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
             NSLog(@"Status Exception.");
             return;
         }
         
         // 输出获取到的数据
-        NSLog(@"%@", _jsonDict);
+        NSLog(@"%@", weakSelf.jsonDict);
         
-        _code = [[_jsonDict objectForKey:@"Data"] objectForKey:@"Code"];
-        _barCodeLabel.text = [self formatCode:_code];
-        NSInteger time = [[[_jsonDict objectForKey:@"Data"] objectForKey:@"Time"] integerValue];
-        _progressTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(progressChanged) userInfo:nil repeats:YES];
+        weakSelf.code = [[weakSelf.jsonDict objectForKey:@"Data"] objectForKey:@"Code"];
+        weakSelf.barCodeLabel.text = [self formatCode:weakSelf.code];
+        NSInteger time = [[[weakSelf.jsonDict objectForKey:@"Data"] objectForKey:@"Time"] integerValue];
+        weakSelf.progressTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(progressChanged) userInfo:nil repeats:YES];
         
         // 设置倒计时进度条
-        _progressView.progress = time / 55.0;
+        weakSelf.progressView.progress = time / 55.0;
         
         // 生成条形码
-        _barCodeImageView.image = [self generateBarCode:_code width:_barCodeImageView.frame.size.width height:_barCodeImageView.frame.size.height];
-        if (_barCodeContentView.frame.size.width != 0 && _barCodeContentView.frame.size.height != 0) {
+        weakSelf.barCodeImageView.image = [self generateBarCode:weakSelf.code width:weakSelf.barCodeImageView.frame.size.width height:weakSelf.barCodeImageView.frame.size.height];
+        if (weakSelf.barCodeContentView.frame.size.width != 0 && weakSelf.barCodeContentView.frame.size.height != 0) {
             NSLog(@"重新加载条形码");
-            _barCodeSizeImageView.image = [UIImage imageWithCIImage:[_barCodeImageView.image CIImage] scale:1.0 orientation:UIImageOrientationRight];
-            _barCodeSizeLabel.text = [self formatCode:_code];
+            weakSelf.barCodeSizeImageView.image = [UIImage imageWithCIImage:[weakSelf.barCodeImageView.image CIImage] scale:1.0 orientation:UIImageOrientationRight];
+            weakSelf.barCodeSizeLabel.text = [self formatCode:weakSelf.code];
         }
         
         // 生成二维码
-        _qrCodeImageView.image = [self generateQRCode:_code width:_qrCodeImageView.frame.size.width height:_qrCodeImageView.frame.size.height];
-        if (_qrCodeContentView.frame.size.width != 0 && _qrCodeContentView.frame.size.height != 0) {
+        weakSelf.qrCodeImageView.image = [self generateQRCode:weakSelf.code width:weakSelf.qrCodeImageView.frame.size.width height:weakSelf.qrCodeImageView.frame.size.height];
+        if (weakSelf.qrCodeContentView.frame.size.width != 0 && weakSelf.qrCodeContentView.frame.size.height != 0) {
             NSLog(@"重新加载二维码");
-            _qrCodeSizeImageView.image = [UIImage imageWithCIImage:[_qrCodeImageView.image CIImage]];
+            weakSelf.qrCodeSizeImageView.image = [UIImage imageWithCIImage:[weakSelf.qrCodeImageView.image CIImage]];
         }
         
         // 添加放大事件
-        [_qrCodeImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapQRCodeBigger)]];
-        [_barCodeImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBarCodeBigger)]];
+        [weakSelf.qrCodeImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapQRCodeBigger)]];
+        [weakSelf.barCodeImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBarCodeBigger)]];
         
-        [MBProgressHUD hideHUDForView:_rectView animated:YES];
+        [MBProgressHUD hideHUDForView:weakSelf.rectView animated:YES];
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"获取数据失败" message:@"无法连接到服务器" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
         [alertView show];
         NSLog(@"GET JSON Error: %@", error);
-        [MBProgressHUD hideHUDForView:_rectView animated:YES];
+        [MBProgressHUD hideHUDForView:weakSelf.rectView animated:YES];
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     }];
     
