@@ -163,9 +163,10 @@ NSString * const port     = @"3000";
     _barCodeContentView.backgroundColor = [UIColor whiteColor];
     
     // 创建image view
-    _barCodeSizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, _barCodeImageView.frame.size.height * 1.5, _barCodeImageView.frame.size.width * 1.5)];
+    _barCodeSizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, _barCodeImageView.frame.size.width * 1.5, _barCodeImageView.frame.size.height * 1.5)];
     _barCodeSizeImageView.center = CGPointMake(_barCodeContentView.frame.size.width / 2.0, _barCodeContentView.frame.size.height / 2.0);
-    _barCodeSizeImageView.image = [UIImage imageWithCIImage:[_barCodeImageView.image CIImage] scale:1.0 orientation:UIImageOrientationRight];
+    _barCodeSizeImageView.image = [UIImage imageWithCIImage:[_barCodeImageView.image CIImage] scale:1.0 orientation:UIImageOrientationUp];
+    _barCodeSizeImageView.transform = CGAffineTransformMakeRotation(M_PI / 2);
     [_barCodeContentView addSubview:_barCodeSizeImageView];
 
     // 创建label
